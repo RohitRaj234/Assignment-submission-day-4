@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, flag = 0;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+
+    // 0 and 1 are not prime numbers
+    if (n == 0 || n == 1) {
+        printf("%d is not a prime number.\n", n);
+    }
+    else {
+        // Check if n is divisible by any number from 2 to n/2
+        for (i = 2; i <= n/2; i++) {
+            if (n % i == 0) {
+                flag = 1;
+                break;
+            }
+        }
+
+        if (flag == 0) {
+            printf("%d is a prime number.\n", n);
+        }
+        else {
+            printf("%d is not a prime number.\n", n);
+        }
+    }
+
+    return 0;
+}
+
+In this program, the user is asked to enter a positive integer. If the number is 0 or 1, it is not a prime number and the program displays an appropriate message. Otherwise, the program checks if the number is divisible by any number from 2 to n/2. If it is, then the flag variable is set to 1 and the loop is exited. If the flag is still 0 after the loop has finished, the number is prime. Otherwise, it is not prime.
